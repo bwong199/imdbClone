@@ -1,0 +1,16 @@
+<% if !user_signed_in? %> 
+  <div class="jumbotron">
+    <p><%= link_to "Sign Up to Write a Review", new_user_registration_path, class: "btn btn-primary btn-log" %></p>
+  </div>
+<% end %> 
+<div class="row">
+  <% @movies.each do |movie| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag movie.image.url(:medium), class: 'image'), movie %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
